@@ -3,8 +3,8 @@ package com.tienda.api.service;
 import com.tienda.api.exception.RecursoNoEncontradoException;
 import com.tienda.api.model.Usuario;
 import com.tienda.api.repository.UsuarioRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,18 +16,21 @@ import java.util.List;
  * delegando la persistencia al {@link UsuarioRepository}.</p>
  *
  * <p>Implementa reglas de negocio como la unicidad del correo electrónico.
- * Utiliza {@code @Slf4j} para el registro de eventos y
- * {@code @RequiredArgsConstructor} para la inyección de dependencias por constructor.</p>
+ * Utiliza SLF4J para el registro de eventos y constructor explícito
+ * para la inyección de dependencias.</p>
  *
  * @author Tienda API
  * @version 1.0.0
  */
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class UsuarioService {
 
+    private static final Logger log = LoggerFactory.getLogger(UsuarioService.class);
     private final UsuarioRepository usuarioRepository;
+
+    public UsuarioService(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
 
     /**
      * Obtiene la lista completa de usuarios registrados.

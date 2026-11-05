@@ -3,7 +3,6 @@ package com.tienda.api.controller;
 import com.tienda.api.model.Producto;
 import com.tienda.api.service.ProductoService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,10 +27,13 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/productos")
-@RequiredArgsConstructor
 public class ProductoController {
 
     private final ProductoService productoService;
+
+    public ProductoController(ProductoService productoService) {
+        this.productoService = productoService;
+    }
 
     /**
      * Obtiene la lista completa de productos.

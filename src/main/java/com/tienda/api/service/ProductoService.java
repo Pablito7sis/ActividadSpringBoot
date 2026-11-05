@@ -3,8 +3,8 @@ package com.tienda.api.service;
 import com.tienda.api.exception.RecursoNoEncontradoException;
 import com.tienda.api.model.Producto;
 import com.tienda.api.repository.ProductoRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,18 +15,21 @@ import java.util.List;
  * <p>Encapsula las operaciones CRUD sobre la entidad {@link Producto},
  * delegando la persistencia al {@link ProductoRepository}.</p>
  *
- * <p>Utiliza {@code @Slf4j} para el registro de eventos y
- * {@code @RequiredArgsConstructor} para la inyección de dependencias por constructor.</p>
+ * <p>Utiliza SLF4J para el registro de eventos y constructor explícito
+ * para la inyección de dependencias.</p>
  *
  * @author Tienda API
  * @version 1.0.0
  */
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class ProductoService {
 
+    private static final Logger log = LoggerFactory.getLogger(ProductoService.class);
     private final ProductoRepository productoRepository;
+
+    public ProductoService(ProductoRepository productoRepository) {
+        this.productoRepository = productoRepository;
+    }
 
     /**
      * Obtiene la lista completa de productos registrados.

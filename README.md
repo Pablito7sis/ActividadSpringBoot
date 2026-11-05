@@ -1,6 +1,6 @@
 # Tienda API - REST con Spring Boot
 
-API REST completa para la gestión de **Productos** y **Usuarios** de una tienda, desarrollada con **Spring Boot 3.x** y **Java 17**.
+API REST completa para la gestión de **Productos** y **Usuarios** de una tienda, desarrollada con **Spring Boot 3.x** y **Java 25**.
 
 ---
 
@@ -11,7 +11,7 @@ Este proyecto implementa una API RESTful con operaciones CRUD completas para dos
 - **Productos:** Gestión del catálogo de productos (nombre, descripción, precio, stock).
 - **Usuarios:** Gestión de usuarios del sistema (nombre, correo único, contraseña protegida, rol).
 
-La API incluye manejo global de excepciones, validación de datos con Bean Validation y buenas prácticas de desarrollo con Lombok.
+La API incluye manejo global de excepciones, validación de datos con Bean Validation y buenas prácticas de desarrollo.
 
 ---
 
@@ -19,12 +19,12 @@ La API incluye manejo global de excepciones, validación de datos con Bean Valid
 
 | Tecnología         | Versión   |
 |--------------------|-----------|
-| Java               | 17+       |
-| Spring Boot        | 3.2.5     |
+| Java               | 25+       |
+| Spring Boot        | 3.5.16    |
 | Spring Data JPA    | 3.2.x     |
 | MySQL              | 8.x       |
 | Apache Maven       | 3.8+      |
-| Lombok             | 1.18.x    |
+| Boilerplate         | Java explícito |
 | Hibernate          | 6.x       |
 
 ---
@@ -33,7 +33,7 @@ La API incluye manejo global de excepciones, validación de datos con Bean Valid
 
 ### 1. Prerrequisitos
 
-- **Java 17** o superior instalado.
+- **Java 25** o superior instalado.
 - **Maven 3.8+** instalado.
 - **MySQL 8.x** en ejecución en `localhost:3306`.
 
